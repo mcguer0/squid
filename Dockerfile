@@ -1,7 +1,7 @@
-FROM ubuntu:20.04
+FROM debian:bullseye
 
 # Install Squid and generate SSL certificates
-ENV TZ="Europe/Moscow"
+ENV TZ=Europe/Moscow
 RUN apt-get update && apt-get install -y tzdata squid openssl
 RUN mkdir /etc/squid/ssl
 WORKDIR /etc/squid/ssl
