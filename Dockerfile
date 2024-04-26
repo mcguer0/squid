@@ -1,9 +1,6 @@
 FROM ubuntu:20.04
 
 # Install Squid and generate SSL certificates
-ENV TZ=Europe/Paris
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
 RUN apt-get update && apt-get install -y squid openssl
 RUN mkdir /etc/squid/ssl
 WORKDIR /etc/squid/ssl
